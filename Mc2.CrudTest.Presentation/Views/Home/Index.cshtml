@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CustomerEntity>
+@using Mc2.CrudTest.Domain.Entities
+
+<style>
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    #customers tr:hover {
+        background-color: #ddd;
+    }
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #04AA6D;
+        color: white;
+    }
+</style>
+
+<div>
+    <a class="btn btn-sm btn-primary" href="/home/CustomerEdit">Add new customer</a>
+    <hr />
+    <table id="customers">
+        <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>DateOfBirth</th>
+            <th>FirstName</th>
+            <th>PhoneNumber</th>
+            <th>Email</th>
+            <th>BankAccountNumber</th>
+            <th>Delete|Edit</th>
+
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FirstName</td>
+                <td>@item.LastName</td>
+                <td>@item.DateOfBirth</td>
+                <td>@item.FirstName</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Email</td>
+                <td>@item.BankAccountNumber</td>
+                <td>
+                    <a class="btn btn-sm btn-danger" href="/home/CustomerDelete/@item.Id">Delete</a>
+                    <a class="btn btn-sm btn-info" href="/home/CustomerEdit/@item.Id">Edit</a>
+
+                </td>
+            </tr>
+        }
+    </table>
+
+
+</div>

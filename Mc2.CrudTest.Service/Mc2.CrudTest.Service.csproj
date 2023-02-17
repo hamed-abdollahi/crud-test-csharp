@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="5.3.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Mc2.CrudTest.Repository.Contract\Mc2.CrudTest.Repository.Contract.csproj" />
+    <ProjectReference Include="..\Mc2.CrudTest.Service.Contract\Mc2.CrudTest.Service.Contract.csproj" />
+    <ProjectReference Include="..\Mc2.CrudTest.Shared\Mc2.CrudTest.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

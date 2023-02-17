@@ -1,0 +1,11 @@
+using System;
+
+namespace Mc2.CrudTest.Presentation.Models
+{
+    public class ErrorViewModel
+    {
+        public string RequestId { get; set; }
+
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
+}

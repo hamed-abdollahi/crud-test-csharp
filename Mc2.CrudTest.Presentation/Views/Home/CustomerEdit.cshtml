@@ -1,0 +1,57 @@
+﻿@model CustomerEntity
+@using Mc2.CrudTest.Domain.Entities
+
+<div class="form-horizontal" style="min-height: 440px;" id="job-div">
+    <form id="employee-contract-form" action="/home/customerEdit" method="post">
+        <input type="hidden" value="@Model.Id" name="Id" />
+        <div class="form-horizontal">
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <div class="form-group">
+                @Html.LabelFor(x => x.FirstName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "form-control", autocomplete = "off", placeholder = "FirstName" })
+                    @Html.ValidationMessageFor(x => x.FirstName, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(x => x.LastName, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.LastName, new { @class = "form-control", autocomplete = "off", placeholder = "LastName" })
+                    @Html.ValidationMessageFor(x => x.LastName, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(x => x.DateOfBirth, new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x => x.DateOfBirth, new { @class = "form-control", autocomplete = "off", data_type = "datetime", data_inputmask_inputformat = "yyyy/mm/dd", dir = "ltr", style = "text-align:left;", placeholder = "DateOfBirth" })
+                    @Html.ValidationMessageFor(x => x.DateOfBirth, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.PhoneNumber, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.PhoneNumber, new { @class = "form-control", autocomplete = "off", placeholder = "PhoneNumber" })
+                    @Html.ValidationMessageFor(x => x.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(x => x.Email, new { @class = "col-md-2 control-label" })
+                <div class="col-md-10">
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control", autocomplete = "off", data_type = "email", placeholder = "Email" })
+                    @Html.ValidationMessageFor(x => x.Email, "", new { @class = "text-danger" })
+                </div>
+                @Html.LabelFor(x => x.BankAccountNumber, new { @class = "col-md-2 control-label" })
+                <div class="col-md-4">
+                    @Html.TextBoxFor(x => x.BankAccountNumber, new { @class = "form-control", autocomplete = "off", placeholder = "BankAccountNumber" })
+                    @Html.ValidationMessageFor(x => x.BankAccountNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-horizontal action-content">
+            <input type="submit" value="Create" />
+        </div>
+    </form>
+
+</div>
+
+
+@section scripts {
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+} 
